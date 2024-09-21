@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que ocupe el 100% de la altura de la pantalla */
+    margin: 0; /* Elimina el margen por defecto */
+    background-color: #f7f7f7; /* Fondo opcional para ver mejor la tarjeta */
+}
+
+.gift {
+    --bg-color: #fcb2b2;
+    --bg-color-light: #ffe7e7;
+    --text-color-hover: #fff;
+    --box-shadow-color: rgba(218, 36, 12, 0.48);
+}
+
+.card {
+    width: 520px;
+    height: 350px;
+    background: #ffc0c0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 14px 26px rgba(238, 20, 20, 0.04);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+}
+.wa{
+    font-size: 250%;
+    color: #e71c92;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Pacifico", cursive;
+    font-style: normal;
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.005);
+    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
+                0 24px 46px var(--box-shadow-color);
+}
+
+.card:hover .circle {
+    border-color: var(--bg-color-light);
+    background: var(--bg-color);
+}
+
+.card:hover p {
+    color: var(--text-color-hover);
+}
+
+.card p {
+    font-size: 23px;
+    color: #e71c92;
+    margin-top: 20px;
+    transition: color 0.3s ease-out;
+    font-family: "Pacifico", cursive;
+    font-style: normal;
+}
+
+.circle {
+    width: 131px;
+    height: 131px;
+    border-radius: 50%;
+    background: #ffefef;
+    border: 3px solid var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-out;
+}
+
+.circle img {
+    width: 120px;
+    height: 80px;
+    object-fit: scale-down;
+    border-radius: 50%;
+    transition: all 0.8s ease;
+}
+
+.circle:hover img {
+    content: url('img/regalo_abierto.png');
+}
+
+.circle:hover {
+    background-color: var(--bg-color-light);
+}
+
+.overlay {
+    width: 118px;
+    position: absolute;
+    height: 118px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    top: 70px;
+    left: 50px;
+    z-index: 0;
+    transition: transform 0.3s ease-out;
+}
+.fondo {
+    object-fit: cover;
+    background: repeating-linear-gradient(45deg, #c992c4, #f7b5f7 20px, #e0b3d6 20px, #e0b3da 40px);
+}
+
+.wrapper-container {
+    display: grid;
+    align-items:normal;
+    justify-content: space-between; /* Espaciado entre los elementos */
+    height: 100%; /* Ocupa toda la altura de la ventana */
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 80rem; /* Limitar el ancho del contenedor para que las letras desaparezcan correctamente */
+    height: 4rem; /* Ajustar la altura */
+    font-family: "Pacifico", cursive;
+    font-style: normal;
+    font-size: 60px;
+    letter-spacing: 0.1em; /* Ajusta el valor según la separación deseada */
+    margin-top:30px ;
+}
+
+.letter {
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajuste para centrar exactamente */
+    padding: 0 10px; /* Espaciado horizontal entre letras */
+    animation: scroll 2.5s linear infinite, rainbow 2.5s infinite;
+    white-space: nowrap;
+}
+
+/* Cambiar la duración de la animación para "feliz" y "primavera" */
+.wrapper.top .letter {
+    animation-duration: 3s; /* Más lento para "feliz" */
+}
+
+.wrapper.bottom .letter {
+    animation-duration: 3.5s; /* Más rápido para "primavera" */
+}
+
+@keyframes scroll {
+    from {
+        left: 100%; /* Comienza desde el extremo derecho */
+    }
+    to {
+        left: -1ch; /* Se mueve hacia el extremo izquierdo */
+    }
+}
+
+@keyframes rainbow {
+    0% { color: white; }
+    10% { color: #ff0000; }
+    20% { color: #ff8700; }
+    30% { color: #ffd300; }
+    40% { color: #deff0a; }
+    50% { color: #a1ff0a; }
+    60% { color: #0aff99; }
+    70% { color: #0aefff; }
+    80% { color: #147df5; }
+    90% { color: #580aff; }
+    100% { color: #be0aff; }
+}
+
+/* Animación individual para cada letra */
+.letter1 { animation-delay: calc(3.3s / 14 * (14 - 1) * -1); }
+.letter2 { animation-delay: calc(3.3s / 14 * (14 - 2) * -1); }
+.letter3 { animation-delay: calc(3.3s / 14 * (14 - 3) * -1); }
+.letter4 { animation-delay: calc(3.3s / 14 * (14 - 4) * -1); }
+.letter5 { animation-delay: calc(3.3s / 14 * (14 - 5) * -1); }
+
+.letter6 { animation-delay: calc(1.9s / 9 * (9 - 1) * -1); }
+.letter7 { animation-delay: calc(1.9s / 9 * (9 - 2) * -1); }
+.letter8 { animation-delay: calc(1.9s / 9 * (9 - 3) * -1); }
+.letter9 { animation-delay: calc(1.9s / 9 * (9 - 4) * -1); }
+.letter10 { animation-delay: calc(1.9s / 9 * (9 - 5) * -1); }
+.letter11 { animation-delay: calc(1.9s / 9 * (9 - 6) * -1); }
+.letter12 { animation-delay: calc(1.9s / 9 * (9 - 7) * -1); }
+.letter13 { animation-delay: calc(1.9s / 9 * (9 - 8) * -1); }
+.letter14 { animation-delay: calc(1.9s / 9 * (9 - 9) * -1); }
+.girasol{
+    display: grid;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+}
